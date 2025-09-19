@@ -1,0 +1,18 @@
+[package]
+name = "csv_md"
+version = "0.1.0"
+edition = "2024"
+authors = ["Roman Chumak <p4ymak@yandex.ru>"]
+license = "MIT"
+repository = "https://github.com/p4ymak/csv_md"
+description = "Struct to convert CSV to Markdown.."
+readme = "README.md"
+categories = ["parsing", "value-formatting", "text-editors"]
+keywords = ["csv", "md", "markdown", "table"]
+[dependencies]
+
+[lib]
+name = "csv_md"
+
+[[expample]]
+name = "demo"
