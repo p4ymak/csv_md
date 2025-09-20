@@ -1,5 +1,6 @@
 # CSV_MD
 [![Latest version](https://img.shields.io/crates/v/csv_md.svg)](https://crates.io/crates/csv_md)
+
 Struct to convert CSV to pretty-printed Markdown..
 
 ## Example
