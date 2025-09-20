@@ -14,5 +14,3 @@ keywords = ["csv", "md", "markdown", "table"]
 [lib]
 name = "csv_md"
 
-[[expample]]
-name = "demo"

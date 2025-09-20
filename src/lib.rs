@@ -180,3 +180,27 @@ where
         .collect::<Vec<String>>()
         .join("\n")
 }
+
+#[cfg(test)]
+pub mod test {
+    use crate::CsvTable;
+
+    #[test]
+    fn about() {
+        let input = "ID, Name, Description
+1, Language, Rust
+2, CSV_MD, Convert CSV to MD
+,
+3, License, MIT, Use for your own, risk
+4, Author, Roman Chumak";
+
+        let output = " | ID | Name     | Description       | 
+ | -- | -------- | ----------------- | 
+ | 1  | Language | Rust              | 
+ | 2  | CSV_MD   | Convert CSV to MD | 
+ |    |          |                   | 
+ | 3  | License  | MIT               | 
+ | 4  | Author   | Roman Chumak      | ";
+        assert_eq!(CsvTable::new(',', input).as_md(), output.to_string());
+    }
+}
