@@ -1,6 +1,5 @@
 # CSV_MD
-Struct to convert CSV to Markdown..
-
+Struct to convert CSV to pretty-printed Markdown..
 
 ## Example
 
