@@ -36,7 +36,7 @@ impl CsvTable {
             if self.header.is_empty() {
                 self.header = Self::parse_row(row, self.separator);
             } else {
-                self.rows.push(Self::parse_row(row, self.separator));
+                self.push_vec(Self::parse_row(row, self.separator));
             }
         }
     }
@@ -46,9 +46,21 @@ impl CsvTable {
             if self.header.is_empty() {
                 self.header = v;
             } else {
-                self.rows.push(v);
+                self.push_vec(v);
             }
         }
+    }
+
+    fn push_vec(&mut self, vec: Vec<String>) {
+        let h_cols = self.header.len();
+        let r_cols = vec.len();
+        let mut vec = vec;
+        if h_cols > r_cols {
+            vec.append(&mut vec![String::new(); h_cols - r_cols]);
+        } else if h_cols < r_cols {
+            vec = vec[..h_cols].to_vec();
+        }
+        self.rows.push(vec);
     }
 
     pub fn is_empty(&self) -> bool {
